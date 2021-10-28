@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"><!-- charset[utf-8:]  definiert den deutschen Zeichensatz -->
+        <meta name="msvalidate.01" content="8B12875037645A4090EE64488042FDA9" /><!--validiert die Website für Bing und Yahoo-->
+        <meta name="date" content="2017-02-3T08:49:37+02:00">		<!-- Angaben, wann die Seite publiziert wurde-->
+        <meta name="keywords" content="2D-Shooter">	<!-- versorgt die Spider der Suchmaschinen mit Informationen zwecks Suchbegriffen -->
+        <meta name="description" content="Eine JavaScript-Applikation">	<!-- Beschreibung, die in den Suchmaschinen erscheinen soll. -->
+        <meta name="robots" content="NOINDEX,NOFOLLOW">			<!-- Links sollen mitindiziert werden //NOINDEX:Seite soll nicht aufgenommen werden//NOFOLLOW Links werden nicht verfolgt-->
+        <meta name="audience" content="alle">				<!-- definiert die Zielgruppe der Website  -->
+        <meta name="page-topic" content="Dienstleistung">		<!-- Zuordnungsdefinition für die Suchmaschine -->	
+        <link href='https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css'>
+        <link href="css/normalize.css" media="screen, print" rel="stylesheet" type="text/css" />
+        <link href="css/delta.css"  media="screen, print" rel="stylesheet" type="text/css" />
+        <script src="js/vendor.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/delta.js"></script>
+        <script src="js/detectBrowser.js"></script>
+        <title>Javascript 2D Shooter Game</title>
+    </head>
+    <body>
+        <script>
+            var output = detect();
+            document.body.innerHTML = output;
+            const substring = "Chrome";
+            if (!output.includes(substring))
+                alert("Dieses Game ist unter Google Chrome optimiert! Die Soundeffekte werden nur in Chrome korrekt wieder gegeben!")
+        </script>
+        <div id="delta">
+            <div id="scoreboard">
+                <span class="lives"><span class="label">LIVES:</span><img class="one" src="images/life.png"><img class="two" src="images/life.png"><img class="three" src="images/life.png"></span>
+                <span class="score"><span class="label">SCORE:</span><span class="value">00000</span></span>
+            </div>
+            <img id="booting" src='images/booting.gif'>
+            <h1 id="title">Kipp</h1>
+            <h2 id="start">press spacebar to start</h1>
+                <h1 id="prepare" style="display:none;">Fasten Your Seatbelt</h1>
+                <canvas id="canvas">
+                    <div class="unsupported">
+                        Sorry, this example cannot be run because your browser does not support the &lt;canvas&gt; element
+                    </div>
+                </canvas>
+                <div id="instructions">
+                    arrow keys to move, spacebar to shoot
+                </div>
+                <div id='sound' class='on' title='toggle music and fx' style="display:none;"></div>
+        </div>
+        <script>
+            Delta();
+        </script>
+
+    </body>
+</html>
